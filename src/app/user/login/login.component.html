@@ -1,0 +1,25 @@
+<div class="container-fluid d-flex justify-content-center">
+    <div class="col-sm-6 p-5">
+        <div class="card text text-center">
+            <div class="card-header"><div class="h4">Login</div></div>
+            <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+                    <div class="mb-3 row">
+                      <label for="emailid" class="col-lg-3 form-label">Email ID</label>
+                      <div class="col-lg-9">
+                          <input type="email" class="form-control" formControlName="emailID" id="emailid"></div>
+                    </div>
+                    <div class="mb-3 row">
+                      <label for="Password" class="col-lg-3 form-label">Password</label>
+                      <div class="col-lg-9">
+                          <input type="password" class="col-sm-9 form-control" formControlName="password" id="Password"></div>
+                    </div>
+                    <div class="form-text pb-3">
+                        <span>Don't have an account? <a [routerLink] = "'../register'">click here</a> to Register</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
